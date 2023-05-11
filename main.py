@@ -62,17 +62,17 @@ homogenen = {
         "octaanamine": "c8h19n",
     },
 }
+while True:
+    random_homogeen_key, random_homogeen_waarde = random.choice(list(homogenen.items()))
 
-random_homogeen_key, random_homogeen_waarde = random.choice(list(homogenen.items()))
+    naam, formule = random.choice(list(random_homogeen_waarde.items()))
 
-naam, formule = random.choice(list(random_homogeen_waarde.items()))
+    print(naam)
 
-print(naam)
+    antwoord = input("typ hier de formule: ")
 
-antwoord = input("typ hier de formule: ")
-
-if antwoord == homogenen[random_homogeen_key][naam]:
-    print("correct")
-else:
-    print(homogenen[random_homogeen_key][naam])
-    print("Bertje boos")
+    if antwoord == homogenen[random_homogeen_key][naam]:
+        print("correct")
+    else:
+        print(homogenen[random_homogeen_key][naam])
+        print("Bertje boos")
