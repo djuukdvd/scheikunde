@@ -86,12 +86,23 @@ while True:
 
         antwoord = input("typ hier de naam: ")
 
-        if antwoord == naam:
-            print("correct\n")
-            homogenen[random_homogeen_key].pop(naam)
-            homogenen = {key: value for key, value in homogenen.items() if value}
-            if not homogenen:
-                exit()
+        if random_homogeen_key == "aldehydes" or random_homogeen_key == "ketonen":
+            if antwoord == naam[:4] + "anal" or antwoord == naam[:4] + "anon":
+                print("correct\n")
+                homogenen[random_homogeen_key].pop(naam)
+                homogenen = {key: value for key, value in homogenen.items() if value}
+                if not homogenen:
+                    exit()
+            else:
+                print(naam)
+                print("Bertje boos\n")
         else:
-            print(naam)
-            print("Bertje boos\n")
+            if antwoord == naam:
+                print("correct\n")
+                homogenen[random_homogeen_key].pop(naam)
+                homogenen = {key: value for key, value in homogenen.items() if value}
+                if not homogenen:
+                    exit()
+            else:
+                print(naam)
+                print("Bertje boos\n")
