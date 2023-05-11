@@ -67,16 +67,31 @@ while True:
 
     naam, formule = random.choice(list(random_homogeen_waarde.items()))
 
-    print(naam)
+    if random.randint(0, 1) == 1:
+        print(naam)
 
-    antwoord = input("typ hier de formule: ")
+        antwoord = input("typ hier de formule: ")
 
-    if antwoord == homogenen[random_homogeen_key][naam]:
-        print("correct")
-        homogenen[random_homogeen_key].pop(naam)
-        homogenen = {key: value for key, value in homogenen.items() if value}
-        if not homogenen:
-            exit()
+        if antwoord == formule:
+            print("correct\n")
+            homogenen[random_homogeen_key].pop(naam)
+            homogenen = {key: value for key, value in homogenen.items() if value}
+            if not homogenen:
+                exit()
+        else:
+            print(formule)
+            print("Bertje boos\n")
     else:
-        print(homogenen[random_homogeen_key][naam])
-        print("Bertje boos")
+        print(formule)
+
+        antwoord = input("typ hier de naam: ")
+
+        if antwoord == naam:
+            print("correct\n")
+            homogenen[random_homogeen_key].pop(naam)
+            homogenen = {key: value for key, value in homogenen.items() if value}
+            if not homogenen:
+                exit()
+        else:
+            print(naam)
+            print("Bertje boos\n")
