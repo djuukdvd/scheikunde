@@ -87,7 +87,7 @@ while True:
         antwoord = input("typ hier de naam: ")
 
         if random_homogeen_key == "aldehydes" or random_homogeen_key == "ketonen":
-            if antwoord == naam[:4] + "anal" or antwoord == naam[:4] + "anon":
+            if antwoord == naam[:-4] + "anal" or antwoord == naam[:-4] + "anon":
                 print("correct\n")
                 homogenen[random_homogeen_key].pop(naam)
                 homogenen = {key: value for key, value in homogenen.items() if value}
