@@ -73,6 +73,10 @@ while True:
 
     if antwoord == homogenen[random_homogeen_key][naam]:
         print("correct")
+        homogenen[random_homogeen_key].pop(naam)
+        homogenen = {key: value for key, value in homogenen.items() if value}
+        if not homogenen:
+            exit()
     else:
         print(homogenen[random_homogeen_key][naam])
         print("Bertje boos")
